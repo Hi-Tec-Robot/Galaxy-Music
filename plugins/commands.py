@@ -129,6 +129,9 @@ async def start(client, message):
         return
     buttons = [
         [
+            InlineKeyboardButton('➕ Add me to your Group ➕', url=f'https://t.me/{Config.BOT_USERNAME}?startgroup=true')
+        ],
+        [
             InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
             InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/VCPlayerBot')
         ],
