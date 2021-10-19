@@ -52,7 +52,8 @@ from pyrogram import (
 IST = pytz.timezone(Config.TIME_ZONE)
 if Config.DATABASE_URI:
     from utils import db
-
+    
+HOME_STICKER = "sticker_id"
 HOME_TEXT = "<b>Hellow  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
 admin_filter=filters.create(is_admin) 
 
@@ -138,7 +139,7 @@ async def start(client, message):
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    k = await message.reply(HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
+    k = await message.reply(HOME_TEXT,HOME_STICKER.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
     await delete_messages([message, k])
 
 
